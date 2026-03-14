@@ -3,4 +3,5 @@
 #### Through studying active attacks that have occured, as a Blue team proffesional you can better pickup on indicators and threat actor artifacts left behind from attacks.
 
 ### Network Architecture<br>
+![alt text](Pictures/honeypot diagram.png)
 
