@@ -14,6 +14,9 @@
 
 ![alt text](Pictures/firewall rules1.png)
 
-#### Here you can see there is no access back to the LAN subnet, but there os put to the Internet.
+#### Here you can see there is no access back to the LAN subnet, but there is access out to the Internet.
 
 ![alt texxt](Pictures/ping-test1.png)
+
+
+#### Now I've installed t-pot on the VM.
