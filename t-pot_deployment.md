@@ -5,3 +5,6 @@
 ### Network Architecture<br>
 ![alt text](Pictures/honeypot diagram.png)
 
+
+#### To start, I installed a secondary Intel Network Interface Card inside of my proxmox host. I set up a bridge between all 4 ports on the new NIC.
+#### Inside of OPNsense, I setup a Interface, and enable it. I configured strict firewall rules to block traffic from the dmz to our local LAN, I also setup allowing our LAN to #### access the DMZ if needed. Ports 443 and 80 are open on the DMZ to WAN. 
