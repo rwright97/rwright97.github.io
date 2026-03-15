@@ -19,4 +19,4 @@
 ![alt texxt](Pictures/ping-test1.png)
 
 
-#### Now I've installed t-pot on the VM.
+#### Next i installed git, and then t-pot
