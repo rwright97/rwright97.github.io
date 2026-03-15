@@ -22,3 +22,5 @@
 #### Next i installed git, and then t-pot.
 
 ![alt text](Pictures/git-tpot install.png)
+
+![alt text](Pictures/Tpot installer.png)
