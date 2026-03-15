@@ -24,3 +24,8 @@
 ![alt text](Pictures/git-tpot install.png)
 
 ![alt text](Pictures/Tpot installer.png)
+
+
+#### After those finish, I then reboot, and ssh into it back from my device.
+
+![alt text](New SSH.png)
