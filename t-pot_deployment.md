@@ -19,4 +19,6 @@
 ![alt texxt](Pictures/ping-test1.png)
 
 
-#### Next i installed git, and then t-pot
+#### Next i installed git, and then t-pot.
+
+![alt text](Pictures/git-tpot install.png)
