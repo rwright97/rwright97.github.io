@@ -21,10 +21,10 @@
 
 #### Next i installed git, and then t-pot.
 
-![alt text](Pictures/git-tpot install.png)
+![alt texxt](Pictures/git-tpot install.png)
 
 
-![alt text](Pictures/Tpot installer.png)
+![alt texxt](Pictures/Tpot installer.png)
 
 
 #### After those finish, I then reboot. Now SSH has been changed. Port 22 is no longer yours, but instead will be open to the world.I'll ssh back into the VM back from my device using my configured port.
