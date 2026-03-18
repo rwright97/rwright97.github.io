@@ -32,5 +32,14 @@
 [alt text](New SSH.png)
 
 #### Once I knew SSH works, I then pivoted to setting up access to the Web UI. I had to add another firewall rule to allow the LAN Interface access to the DMZ Interface.
-
 #### I then tested the GUI by going to this: {VM IP Address}:64297
+
+![alt texxt](Pictures/TPOT Home Page.png)
+
+#### Here on the attack page, we cna see a few attacks have already occurred
+
+![alt texxt](Pictures/attackmap.png)
+
+#### Here is the Elastic dashboard where we can see threat actor metrics
+
+![alt texxt](Pictures/Elastic.png)
