@@ -31,4 +31,6 @@
 
 [alt text](New SSH.png)
 
-#### Once I knew SSH works, I then pivoted to setting up access to the Web UI. I had to add another firewall rule to
+#### Once I knew SSH works, I then pivoted to setting up access to the Web UI. I had to add another firewall rule to allow the LAN Interface access to the DMZ Interface.
+
+#### I then tested the GUI by going to this: {VM IP Address}:64297
