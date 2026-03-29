@@ -7,7 +7,7 @@
 
 #### Check out my t-pot honeypot deployment here! :
 
-#### [Honeypot deployment](t-pot_deployment.md)
+#### [Honeypot Deployment](t-pot_deployment.md)
 
 #### Setting up a pentest device to be untraceable :
 
