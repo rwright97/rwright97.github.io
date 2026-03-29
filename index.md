@@ -9,4 +9,6 @@
 
 #### [Honeypot deployment](t-pot_deployment.md)
 
-#### Setting up Wazuh SIEM :
+#### Setting up a pentest device to be untraceable :
+
+#### []()
