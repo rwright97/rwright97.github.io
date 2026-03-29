@@ -9,6 +9,6 @@
 
 #### [Honeypot Deployment](t-pot_deployment.md)
 
-#### Setting up a pentest device to be untraceable :
+#### Setting up a pentest device to be untraceable/hard-to-track :
 
-#### [Untraceable Device](untraceable_pentest_device.md)
+#### [Untraceable/Hard-To-Track Device](untraceable_pentest_device.md)
