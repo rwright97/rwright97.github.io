@@ -12,3 +12,5 @@
 #### Setting up a pentest device to be untraceable/hard-to-track :
 
 #### [Untraceable/Hard-To-Track Device](untraceable_pentest_device.md)
+
+#### Utilizing Windows BlueHammer (CVE Code still undetermined) and Vulnerability Analysis:
