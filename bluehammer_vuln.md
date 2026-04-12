@@ -16,7 +16,7 @@ Setup a verified non-admin user on the test VM:
 ![alt text](Pictures/bluehammer_nonadmin_user.png)
 ![alt text](Pictures/bluehammer_nonadmin_desktop.png)
 
-Once inside of the host device, I will push this payload and execute it as the user to escalate my privileges to NT AUTHORITY\SYSTEM
+Once inside of the host device, I will push this payload and execute it as the user to escalate my privileges to NT AUTHORITY\SYSTEM.
 
 Here is the exploit running in action:
 
