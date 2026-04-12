@@ -13,7 +13,7 @@
 ![alt text](Pictures/bluehammer_files.png)
 
 ####Setup a verified non-admin user on the test VM:
-![alt text](Pictures/bluehammer_nonadmin user.png)
+![alt text](Pictures/bluehammer_nonadmin_user.png)
 ![alt text](Pictures/bluehammer_nonadmin_desktop.png)
 
 ####Then I will setup a simple http webserver that will be vulnerable to rejetto.
