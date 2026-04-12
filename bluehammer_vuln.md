@@ -16,5 +16,6 @@
 ![alt text](Pictures/bluehammer_nonadmin_user.png)
 ![alt text](Pictures/bluehammer_nonadmin_desktop.png)
 
-####Then I will setup a simple http webserver that will be vulnerable to rejetto.
 ####Once inside of the host device, I will push this payload and execute it as the user to escalate my privileges to NT AUTHORITY\SYSTEM
+####Here is the exploit running in action:
+#### https://youtu.be/8b7tB3D6kAU
