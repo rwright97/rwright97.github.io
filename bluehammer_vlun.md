@@ -13,7 +13,8 @@
 ![alt text](Pictures/bluehammer_files.png)
 
 ####Setup a verified non-admin user on the test VM:
-
+![alt text](Pictures/bluehammer_nonadmin user.png)
+![alt text](Pictures/bluehammer_nonadmin_desktop.png)
 
 ####Then I will setup a simple http webserver that will be vulnerable to rejetto.
 ####Once inside of the host device, I will push this payload and execute it as the user to escalate my privileges to NT AUTHORITY\SYSTEM
