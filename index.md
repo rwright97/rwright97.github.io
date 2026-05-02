@@ -13,6 +13,6 @@
 
 #### [Untraceable/Hard-To-Track Device](untraceable_pentest_device.md)
 
-#### Utilizing Windows BlueHammer (CVE Code still undetermined) and Vulnerability Analysis:
+#### Utilizing Windows BlueHammer (CVE-2026-33825) and Vulnerability Analysis:
 
 #### [Bluehammer Vulnerability Implementation and Analysis](bluehammer_vuln.md)
