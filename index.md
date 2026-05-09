@@ -1,14 +1,20 @@
 <div align="center">
 
-<h1>Ridge Wright — Cybersecurity Portfolio</h1>
-
-<img src="/Pictures/Profile.png" alt="Ridge Wright" width="320">
-
+<div style="font-size: 42px; font-weight: bold; margin-bottom: 20px;">
+  Ridge Wright — Cybersecurity Portfolio
 </div>
 
-System Administrator • Aspiring Cybersecurity Engineer  
-Cloud Security • Lab Research • Threat Detection • Offensive Security Fundamentals
----
+<img src="{{ '/Pictures/Profile.png' | relative_url }}" alt="Ridge Wright" width="320">
+
+<div style="font-size: 20px; font-weight: bold; margin-top: 15px;">
+  System Administrator | Aspiring Cybersecurity Engineer
+</div>
+
+<div style="font-size: 16px; margin-top: 8px;">
+  Cloud Security • Threat Hunting • SOC Labs • Security Research
+</div>
+
+</div>
 
 ## Brief Intro
 
