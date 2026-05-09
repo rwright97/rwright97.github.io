@@ -10,10 +10,7 @@ body {
 }
 
 body {
-  background:
-    linear-gradient(rgba(3, 8, 15, 0.78), rgba(3, 8, 15, 0.90)),
-    url("{{ '/Pictures/cybersecurity-background.png' | relative_url }}");
-
+  background-image: url("{{ '/Pictures/cybersecurity-background.png' | relative_url }}");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
