@@ -141,6 +141,89 @@ tags:
   - attack.privilege-escalation
   - attack.t1548</code></pre>
 
+<h2>Detection Engineering and Sigma Rule Validation</h2>
 
+<p>
+  After completing the attack path, I reviewed the victim machine's authentication logs to identify what evidence was created by the activity. 
+  The goal was to determine which log artifacts could be used to detect the privilege escalation behavior from a defensive perspective.
+</p>
+
+<p>
+  The most important log evidence was the sudo command showing <code>labuser</code> executing <code>/usr/bin/find</code> with elevated privileges. 
+  Since the attack used the <code>-exec</code> option to launch <code>/bin/sh</code>, those command elements became the basis for the detection logic.
+</p>
+
+<h3>Detection Goal</h3>
+
+<p>
+  The goal of this detection is to identify suspicious sudo activity where the <code>find</code> binary is used to execute a shell. 
+  While <code>find</code> is a legitimate Linux utility, it can become dangerous when a low-privileged user is allowed to run it as root.
+</p>
+
+<h3>Observed Indicators</h3>
+
+<ul>
+  <li>SSH authentication activity for <code>labuser</code></li>
+  <li>Sudo privilege enumeration using <code>sudo -l</code></li>
+  <li>Execution of <code>/usr/bin/find</code> through sudo</li>
+  <li>Use of the <code>-exec</code> option</li>
+  <li>Execution of <code>/bin/sh</code> from the elevated command</li>
+</ul>
+
+<h3>Sigma Rule Creation</h3>
+
+<p>
+  Based on the observed log evidence, I created a Sigma rule to detect this behavior in Linux authentication logs.
+</p>
+
+<pre><code>title: Linux Privilege Escalation Attempt Via Sudo Find Exec
+id: 4d8f5c9a-5fd5-4a9c-9b51-2a73e2d12f42
+status: experimental
+description: Detects possible Linux privilege escalation using sudo find with -exec to spawn a shell.
+author: Ridge Wright
+date: 2026-05-09
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    message|contains|all:
+      - 'COMMAND=/usr/bin/find'
+      - '-exec'
+      - '/bin/sh'
+  condition: selection
+fields:
+  - timestamp
+  - hostname
+  - user
+  - message
+falsepositives:
+  - Administrative testing
+  - Security labs
+level: high
+tags:
+  - attack.privilege-escalation
+  - attack.t1548</code></pre>
+
+<h3>Rule Validation</h3>
+
+<p>
+  After creating the rule, I used Sigma CLI to validate the rule syntax and confirm that the rule was structured correctly.
+</p>
+
+<pre><code>~/.local/bin/sigma check linux_sudo_find_exec_privesc.yml</code></pre>
+
+
+
+<p>
+  The rule successfully passed validation, confirming that the Sigma rule was syntactically valid and ready to be converted for a supported SIEM backend.
+</p>
+
+<h3>SIEM Deployment Considerations</h3>
+
+<p>
+  This lab focused on writing and validating the Sigma rule rather than deploying it into a production SIEM. 
+  In a real environment, this Sigma rule could be converted into a SIEM-specific query using Sigma CLI and then tuned against the organization's Linux authentication logs.
+</p>
 
 
