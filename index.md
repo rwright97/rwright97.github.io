@@ -44,6 +44,6 @@ This lab documents my process of building a privacy-focused pentest workstation 
 
 ## Contact
 
-- GitHub: (rwright97)[https://github.com/rwright97]
+- GitHub: [rwright97](https://github.com/rwright97)
 - Phone: 470-442-0464
-- Email: (ridge.wright97@gmail.com)[mailto:ridge.wright97@gmail.com]
+- Email: [ridge.wright97@gmail.com](mailto:ridge.wright97@gmail.com)
