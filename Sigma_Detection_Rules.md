@@ -67,6 +67,10 @@ then execute the second command below to gain access to a privileged shell:
 
 We now have an escalated permissions shell session! So, this attack path is what we will be writing a sigma rule for.
 
+Lastly, I will verify this showed up on logs, I checked inside of journalctl and here it is:
+
+
+
 ## Detection Engineering
 
 
