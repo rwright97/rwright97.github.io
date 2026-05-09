@@ -7,7 +7,7 @@
 <img src="{{ '/Pictures/Profile.png' | relative_url }}" alt="Ridge Wright" width="320">
 
 <div style="font-size: 20px; font-weight: bold; margin-top: 15px;">
-  System Administrator | Aspiring Cybersecurity Engineer
+  System Administrator • Aspiring Cybersecurity Engineer
 </div>
 
 <div style="font-size: 16px; margin-top: 8px;">
