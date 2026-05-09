@@ -3,7 +3,7 @@ Ridge Wright — Cybersecurity Portfolio
 </div>
 <div align="center">
 
-<img src="Pictures/profile.jpg" alt="Ridge Wright" width="180" style="border-radius: 50%;" />
+<img src="Pictures/Profile.png" alt="Ridge Wright" width="180" style="border-radius: 50%;" />
 
 System Administrator • Aspiring Cybersecurity Engineer  
 Cloud Security • Lab Research • Threat Detection • Offensive Security Fundamentals
