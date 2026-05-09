@@ -53,6 +53,19 @@ I then set a rule to allow the test account to run `sudo` with no password to ex
 
 Once that was all setup, I moved over to my kali machine, and did some reconnaisance. To save time, I directly scanned the host IP.
 
+![alttext](Pictures/sigma_nmap_scan.png)
+
+I noticed an open ssh port on the victim host, so i decided to compile a username and password wordlist and perform a brute force on the ssh login using hydra.
+
+![alttext](Pictures/sigma_hydra.png)
+
+We have identified credentials that we can use to login to the victim with via ssh.
+I will now perform the sudo -l command and look at the accounts sudo permissions.
+I will then execute this find command to gain access to a privileged shell:
+
+<pre><code>sudo find . -exec /bin/sh \; -quit</code></pre>
+
+
 
 
 
