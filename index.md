@@ -1,6 +1,6 @@
-<h1 align="center">Ridge Wright — Cybersecurity Portfolio</h1>
-
 <div align="center">
+
+<h1>Ridge Wright — Cybersecurity Portfolio</h1>
 
 <img src="/Pictures/Profile.png" alt="Ridge Wright" width="320">
 
