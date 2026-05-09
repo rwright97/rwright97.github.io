@@ -62,10 +62,43 @@ td {
 }
 
 /* Code blocks */
+.markdown-body pre,
+.markdown-body pre code,
 pre,
-code {
-  background-color: #161b22;
-  color: #c9d1d9;
+pre code {
+  background: rgba(3, 10, 22, 0.95) !important;
+  color: #d6f3ff !important;
+  border-radius: 8px;
+}
+
+.markdown-body pre,
+pre {
+  border: 1px solid rgba(0, 183, 255, 0.35);
+  border-left: 4px solid #00b7ff;
+  padding: 16px 20px;
+  margin: 18px 0 28px 0;
+  overflow-x: auto;
+  box-shadow: 0 0 18px rgba(0, 183, 255, 0.08);
+}
+
+.markdown-body pre code,
+pre code {
+  background: transparent !important;
+  color: #d6f3ff !important;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+/* Inline code only */
+.markdown-body p code,
+p code,
+li code {
+  background: rgba(3, 10, 22, 0.9) !important;
+  color: #79c0ff !important;
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  border-radius: 5px;
+  padding: 2px 6px;
 }
 
 /* Images */
