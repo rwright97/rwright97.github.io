@@ -213,7 +213,7 @@ tags:
 
 <pre><code>~/.local/bin/sigma check linux_sudo_find_exec_privesc.yml</code></pre>
 
-
+![alttxt](Pictures/sigma_rule_validation.png)
 
 <p>
   The rule successfully passed validation, confirming that the Sigma rule was syntactically valid and ready to be converted for a supported SIEM backend.
