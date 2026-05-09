@@ -42,6 +42,12 @@ This lab documents my process of building a privacy-focused pentest workstation 
 
 ---
 
+### [Sigma Detection Rule: Linux Privilege Escalation via Sudo Find](Sigma_Detection_Rules.md)
+
+Simulated SSH initial access with Hydra, exploited a sudoers misconfiguration using <code>/usr/bin/find</code>, reviewed Linux authentication logs, and created a validated Sigma rule to detect the privilege escalation behavior.
+
+---
+
 ## Contact
 
 - GitHub: [rwright97](https://github.com/rwright97)
