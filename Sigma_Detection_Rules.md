@@ -26,9 +26,6 @@ This lab focuses on:
 
 An attacker gains access to a low-privileged Linux account and begins enumerating the system for privilege escalation opportunities. One of the first commands they may run is:
 
-
-<p>One of the first commands they may run is:</p>
-
 <pre><code>sudo -l</code></pre>
 
 This command shows which programs the current user is allowed to run with elevated privileges.
@@ -53,7 +50,7 @@ Once that was all setup, I moved over to my kali machine and did some reconnaiss
 
 ![alttext](Pictures/sigma_nmap_scan.png)
 
-I noticed an open ssh port on the victim host, so i decided to compile a username and password wordlist and perform a brute force on the ssh login using hydra.
+I noticed an open ssh port on the victim host, so I decided to compile a username and password wordlist and perform a brute force on the ssh login using hydra.
 
 ![alttext](Pictures/sigma_hydra.png)
 
@@ -148,7 +145,54 @@ tags:
   The rule successfully passed validation, confirming that the Sigma rule was syntactically valid and ready to be converted for a supported SIEM backend.
 </p>
 
-<h3>SIEM Deployment Considerations</h3>
+<h2>MITRE ATT&amp;CK Mapping</h2>
+
+<p>
+  This lab maps to several MITRE ATT&amp;CK techniques across initial access, credential access, lateral movement-style remote access, execution, and privilege escalation.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tactic</th>
+      <th>Technique</th>
+      <th>ID</th>
+      <th>How It Applies to This Lab</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Credential Access</td>
+      <td>Brute Force: Password Guessing</td>
+      <td>T1110.001</td>
+      <td>Hydra was used to guess the SSH password for the low-privileged <code>labuser</code> account.</td>
+    </tr>
+    <tr>
+      <td>Lateral Movement / Remote Access</td>
+      <td>Remote Services: SSH</td>
+      <td>T1021.004</td>
+      <td>The attacker authenticated to the Ubuntu victim machine over SSH using the discovered credentials.</td>
+    </tr>
+    <tr>
+      <td>Execution</td>
+      <td>Command and Scripting Interpreter: Unix Shell</td>
+      <td>T1059.004</td>
+      <td>The attack used <code>/bin/sh</code> to spawn an interactive shell on the Linux system.</td>
+    </tr>
+    <tr>
+      <td>Privilege Escalation</td>
+      <td>Abuse Elevation Control Mechanism: Sudo and Sudo Caching</td>
+      <td>T1548.003</td>
+      <td>The attacker abused a sudoers misconfiguration that allowed <code>labuser</code> to run <code>/usr/bin/find</code> as root.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  The primary technique for the Sigma detection rule is <strong>T1548.003 - Abuse Elevation Control Mechanism: Sudo and Sudo Caching</strong>, because the rule focuses on detecting sudo-based privilege escalation through the abuse of <code>/usr/bin/find</code>.
+</p>
+
+## SIEM Deployment Considerations
 
 <p>
   This lab focused on writing and validating the Sigma rule rather than deploying it into a production SIEM. 
