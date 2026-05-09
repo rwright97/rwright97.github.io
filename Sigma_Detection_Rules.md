@@ -26,5 +26,19 @@ This lab focuses on:
 
 An attacker gains access to a low-privileged Linux account and begins enumerating the system for privilege escalation opportunities. One of the first commands they may run is:
 
-```bash
-sudo -l
+```html
+<p>One of the first commands they may run is:</p>
+
+<pre><code>sudo -l</code></pre>
+
+This command shows which programs the current user is allowed to run with elevated privileges.
+
+In this scenario, the attacker discovers that the user can run /usr/bin/find as root. This is dangerous because find can execute commands through the -exec option.
+
+A potential privilege escalation command may look like this:
+
+<pre><code>sudo find . -exec /bin/sh \; -quit</code></pre>
+
+If successful, this command could spawn a shell running with elevated privileges.
+
+
