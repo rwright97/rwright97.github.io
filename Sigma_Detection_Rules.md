@@ -226,4 +226,59 @@ tags:
   In a real environment, this Sigma rule could be converted into a SIEM-specific query using Sigma CLI and then tuned against the organization's Linux authentication logs.
 </p>
 
+<h2>Defensive Recommendations</h2>
+
+<p>
+  This lab shows how a simple sudoers misconfiguration can create a serious privilege escalation path. 
+  The main defensive takeaway is that administrative permissions should be reviewed carefully, especially when they allow users to run binaries that can execute other commands.
+</p>
+
+<ul>
+  <li>
+    Regularly review <code>/etc/sudoers</code> and files inside <code>/etc/sudoers.d/</code> for risky permissions.
+  </li>
+  <li>
+    Avoid granting <code>NOPASSWD</code> permissions unless there is a clear operational need.
+  </li>
+  <li>
+    Do not allow low-privileged users to run command-execution-capable binaries as root, such as <code>find</code>, <code>vim</code>, <code>less</code>, <code>awk</code>, <code>bash</code>, or <code>python</code>.
+  </li>
+  <li>
+    Compare sudo permissions against known GTFOBins techniques to identify binaries that may be abused for privilege escalation.
+  </li>
+  <li>
+    Monitor Linux authentication logs for suspicious sudo activity, especially commands containing <code>-exec</code>, <code>/bin/sh</code>, <code>/bin/bash</code>, or other shell-spawning behavior.
+  </li>
+  <li>
+    Alert on unusual sudo usage by low-privileged users, especially after successful SSH logins from unfamiliar hosts.
+  </li>
+  <li>
+    Use centralized logging or a SIEM to collect Linux authentication logs so suspicious privilege escalation behavior can be detected across multiple systems.
+  </li>
+  <li>
+    Apply the principle of least privilege by only granting users the exact permissions needed for their role.
+  </li>
+</ul>
+
+<h2>Conclusion</h2>
+
+<p>
+  This lab demonstrated a complete attack and detection workflow against an Ubuntu Linux victim machine. 
+  The attack path began with SSH credential brute forcing against a low-privileged user account, followed by sudo privilege enumeration and privilege escalation through a misconfigured <code>/usr/bin/find</code> permission.
+</p>
+
+<p>
+  After completing the attack, I reviewed the victim machine's authentication logs to identify the evidence created by the activity. 
+  The sudo log entry showing <code>labuser</code> executing <code>/usr/bin/find</code> with the <code>-exec</code> option provided a clear detection opportunity.
+</p>
+
+<p>
+  I then created a Sigma rule to detect this behavior and validated the rule using Sigma CLI. 
+  This confirmed that the rule was syntactically valid and could be converted for use in a supported SIEM backend.
+</p>
+
+<p>
+  Overall, this project demonstrates the connection between offensive security testing and defensive detection engineering. 
+  By understanding how an attacker abuses a Linux misconfiguration, defenders can build more effective detections, improve logging coverage, and reduce the risk of privilege escalation in production environments.
+</p>
 
