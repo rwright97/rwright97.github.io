@@ -58,10 +58,16 @@ I noticed an open ssh port on the victim host, so i decided to compile a usernam
 ![alttext](Pictures/sigma_hydra.png)
 
 We have identified credentials that we can use to login to the victim with via ssh.
-I will now perform the sudo -l command and look at the accounts sudo permissions.
-I will then execute this find command to gain access to a privileged shell:
+I will now perform the commands below and look at the accounts sudo permissions,
+then execute the second command below to gain access to a privileged shell:
 
 <pre><code>sudo find . -exec /bin/sh \; -quit</code></pre>
+
+![alttxt](Picture/sigma_privesc.png)
+
+We now have an escalated permissions shell session! So, this attack path is what we will be writing a sigma rule for.
+
+
 
 
 
