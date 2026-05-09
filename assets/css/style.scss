@@ -1,0 +1,77 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Full site background */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    linear-gradient(rgba(3, 8, 15, 0.78), rgba(3, 8, 15, 0.90)),
+    url("{{ '/Pictures/cybersecurity-background.png' | relative_url }}");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #c9d1d9;
+}
+
+/* Main content readability panel */
+.markdown-body,
+.container,
+.container-lg,
+.wrapper,
+section,
+main,
+.page-content {
+  background-color: rgba(8, 13, 22, 0.82);
+  color: #c9d1d9;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #f0f6fc;
+}
+
+/* Links */
+a {
+  color: #58a6ff;
+}
+
+/* Tables */
+table {
+  background-color: rgba(13, 17, 23, 0.88);
+}
+
+th {
+  background-color: rgba(22, 27, 34, 0.95);
+  color: #f0f6fc;
+}
+
+td {
+  background-color: rgba(13, 17, 23, 0.88);
+  color: #c9d1d9;
+}
+
+/* Code blocks */
+pre,
+code {
+  background-color: #161b22;
+  color: #c9d1d9;
+}
+
+/* Images */
+img {
+  border-radius: 10px;
+}
