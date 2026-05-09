@@ -4,8 +4,9 @@
 
 <img src="assets/profile.jpg" alt="Ridge Wright" width="180" style="border-radius: 50%;" />
 
-### System Administrator | Aspiring Cybersecurity Engineer  
-### Cloud Security • Lab Research • Threat Detection • Offensive Security Fundamentals
+System Administrator • Aspiring Cybersecurity Engineer  
+Cloud Security • Lab Research • Threat Detection • Offensive Security Fundamentals
+
 
 </div>
 
@@ -48,6 +49,6 @@ This lab documents my process of building a privacy-focused pentest workstation 
 
 ## Contact
 
-- GitHub: [[Your GitHub Profile Link Here](https://github.com/rwright97)]
+- GitHub: [https://github.com/rwright97]
 - Phone: 470-442-0464
 - Email: [ridge.wright97@gmail.com]
