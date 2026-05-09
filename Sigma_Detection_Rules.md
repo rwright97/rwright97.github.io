@@ -26,7 +26,7 @@ This lab focuses on:
 
 An attacker gains access to a low-privileged Linux account and begins enumerating the system for privilege escalation opportunities. One of the first commands they may run is:
 
-```html
+
 <p>One of the first commands they may run is:</p>
 
 <pre><code>sudo -l</code></pre>
