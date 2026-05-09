@@ -1,5 +1,6 @@
+<div align="center">
 # Ridge Wright — Cybersecurity Portfolio
-
+/div>
 <div align="center">
 
 <img src="assets/profile.jpg" alt="Ridge Wright" width="180" style="border-radius: 50%;" />
