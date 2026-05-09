@@ -5,12 +5,10 @@ Ridge Wright — Cybersecurity Portfolio
 
 <img src="/Pictures/Profile.png" alt="Ridge Wright" width="320">
 
-System Administrator • Aspiring Cybersecurity Engineer  
-Cloud Security • Lab Research • Threat Detection • Offensive Security Fundamentals
-
-
 </div>
 
+System Administrator • Aspiring Cybersecurity Engineer  
+Cloud Security • Lab Research • Threat Detection • Offensive Security Fundamentals
 ---
 
 ## Brief Intro
