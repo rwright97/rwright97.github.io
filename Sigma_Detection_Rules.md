@@ -69,7 +69,6 @@ We now have an escalated permissions shell session! So, this attack path is what
 
 ## Detection Engineering
 
-<h2>Detection Engineering</h2>
 
 <p>
   After completing the attack path, the next step was to think through how this behavior could be detected from a defensive perspective.
