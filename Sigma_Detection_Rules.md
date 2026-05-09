@@ -69,7 +69,7 @@ We now have an escalated permissions shell session! So, this attack path is what
 
 Lastly, I will verify this showed up on logs, I checked inside of journalctl and here it is:
 
-
+![alttxt](Pictures/sigma_log_validation.png)
 
 ## Detection Engineering
 
