@@ -67,7 +67,40 @@ then execute the second command below to gain access to a privileged shell:
 
 We now have an escalated permissions shell session! So, this attack path is what we will be writing a sigma rule for.
 
+## Detection Engineering
 
+<h2>Detection Engineering</h2>
+
+<p>
+  After completing the attack path, the next step was to think through how this behavior could be detected from a defensive perspective.
+  The goal of the detection was to identify suspicious sudo activity where the <code>find</code> binary is used to execute a shell.
+</p>
+
+<p>
+  This behavior is suspicious because <code>find</code> is a legitimate Linux utility, but when it is executed with elevated privileges and combined with the <code>-exec</code> option, it can be abused to spawn a root shell.
+</p>
+
+<h3>Detection Goal</h3>
+
+<p>
+  The detection goal is to alert when Linux authentication logs show a user executing <code>/usr/bin/find</code> through <code>sudo</code> with command execution behavior that may indicate privilege escalation.
+</p>
+
+<h3>Log Source</h3>
+
+<p>
+  The primary log source for this detection is Linux authentication logging. On Ubuntu systems, this activity may appear in <code>/var/log/auth.log</code> or through <code>journalctl</code>.
+</p>
+
+<h3>Suspicious Indicators</h3>
+
+<ul>
+  <li>Successful SSH login as a low-privileged user</li>
+  <li>Use of <code>sudo -l</code> to enumerate privileges</li>
+  <li>Execution of <code>/usr/bin/find</code> through <code>sudo</code></li>
+  <li>Use of the <code>-exec</code> option</li>
+  <li>Execution of a shell such as <code>/bin/sh</code></li>
+</ul>
 
 
 
