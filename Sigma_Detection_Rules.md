@@ -63,7 +63,7 @@ then execute the second command below to gain access to a privileged shell:
 
 <pre><code>sudo find . -exec /bin/sh \; -quit</code></pre>
 
-![alttxt](Picture/sigma_privesc.png)
+![alttxt](Pictures/sigma_privesc.png)
 
 We now have an escalated permissions shell session! So, this attack path is what we will be writing a sigma rule for.
 
