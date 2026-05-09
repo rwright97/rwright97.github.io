@@ -102,6 +102,40 @@ We now have an escalated permissions shell session! So, this attack path is what
 </ul>
 
 
+<h3>Sigma Rule Development</h3>
+
+<p>
+  Based on the observed attack behavior, I created a Sigma rule that looks for sudo log messages containing the key command elements associated with this privilege escalation technique.
+</p>
+
+<pre><code>title: Linux Privilege Escalation Attempt Via Sudo Find Exec
+status: experimental
+description: Detects possible Linux privilege escalation using sudo find with -exec to spawn a shell.
+author: Ridge Wright
+logsource:
+  product: linux
+  service: auth
+detection:
+  selection:
+    message|contains|all:
+      - 'sudo'
+      - 'find'
+      - '-exec'
+      - '/bin/sh'
+  condition: selection
+fields:
+  - timestamp
+  - hostname
+  - user
+  - message
+falsepositives:
+  - Administrative testing
+  - Security labs
+level: high
+tags:
+  - attack.privilege-escalation
+  - attack.t1548</code></pre>
+
 
 
 
