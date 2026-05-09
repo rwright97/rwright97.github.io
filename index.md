@@ -24,15 +24,6 @@ My goal is to understand both sides of cybersecurity: how systems are attacked, 
 
 ---
 
-## Current Research & Lab Work
-
-| Project | Description |
-|---|---|
-| [T-Pot Honeypot Deployment](t-pot_deployment.md) | A honeypot lab deployed in a segmented DMZ environment to observe attacks, study exposed services, and practice network/security monitoring. |
-| [Privacy-Focused Pentest Workstation](untraceable_pentest_device.md) | A lab workstation project focused on traffic isolation, Tor routing, Whonix, and privacy-focused security research in a controlled environment. |
-
----
-
 ## Featured Labs
 
 ### [T-Pot Honeypot Deployment](t-pot_deployment.md)
