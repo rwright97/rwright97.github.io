@@ -43,11 +43,15 @@ If successful, this command could spawn a shell running with elevated privileges
 
 ## Lab Setup & Execution
 
-To start, I created a Victim VM running Ubuntu 26.04 on my proxmox server.
+To start, I created a Victim VM running Ubuntu 24.04 on my proxmox server.
 
 I create a non-privileged local user account on our victim VM.
 
 I then set a rule to allow the test account to run `sudo` with no password to execute /usr/bin/find
+
+![alt text](Pictures/TestUser_Rule_Creation.png)
+
+Once that was all setup, I moved over to my kali machine, and did some reconnaisance. To save time, I directly scanned the host IP.
 
 
 
