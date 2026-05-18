@@ -243,6 +243,82 @@ clamd socket available at /var/run/clamav/clamd.sock
 
 ---
 
+## ClamAV Log Forwarding to Wazuh
+
+ClamAV was configured to provide malware verdict logs for the Secure Web Gateway lab. Squid and C-ICAP handled proxy inspection, while ClamAV generated the final detection result.
+
+### Log File Setup
+
+A local ClamAV log file was created and monitored for malware detections:
+
+```sh
+touch /var/log/clamd.log
+tail -F /var/log/clamd.log
+```
+
+Example detection:
+
+```text
+Mon May 18 01:27:57 2026 -> /var/tmp/CI_TMP_E1vXM3: Eicar-Test-Signature FOUND
+```
+
+### Log Forwarder
+
+A lightweight script was created to watch `/var/log/clamd.log`, identify detection lines containing `FOUND`, tag them as Secure Web Gateway events, and forward them directly to Wazuh over UDP/514.
+
+```text
+/var/log/clamd.log
+        ↓
+swg-clamav-log-forwarder.sh
+        ↓
+Wazuh UDP/514
+        ↓
+Custom Wazuh Rule
+```
+
+The forwarder was started with:
+
+```sh
+chmod +x /usr/local/sbin/swg-clamav-log-forwarder.sh
+daemon -f -p /var/run/swg_clamav_log_forwarder.pid /usr/local/sbin/swg-clamav-log-forwarder.sh
+```
+
+Forwarding was validated with:
+
+```sh
+tail -n 40 /var/log/clamav-forwarder.log
+```
+
+Example output:
+
+```text
+Forwarding malware detection: Mon May 18 01:27:57 2026 -> /var/tmp/CI_TMP_E1vXM3: Eicar-Test-Signature FOUND
+```
+
+### Wazuh Rule
+
+A custom Wazuh rule was created to alert on forwarded ClamAV detections.
+
+```xml
+<group name="secure_web_gateway,clamav,malware,">
+
+  <rule id="100240" level="12">
+    <match>event_type=opnsense_swg_clamav</match>
+    <regex type="pcre2">(?i)\bFOUND\b</regex>
+    <description>ClamAV malware detection from Secure Web Gateway inspection</description>
+    <group>secure_web_gateway,clamav,malware,detected,</group>
+  </rule>
+
+  <rule id="100241" level="12">
+    <match>event_type=opnsense_swg_clamav</match>
+    <regex type="pcre2">(?i)Eicar-Test-Signature.*\bFOUND\b</regex>
+    <description>Secure Web Gateway detected EICAR test malware through ClamAV</description>
+    <group>secure_web_gateway,clamav,malware,eicar,detected,</group>
+  </rule>
+
+</group>
+```
+
 ## C-ICAP Configuration
 
 C-ICAP was enabled from the OPNsense web interface.
@@ -486,66 +562,26 @@ Client -> Squid Proxy -> C-ICAP -> ClamAV -> Block Page
 
 ---
 
-## Wazuh Log Validation
 
-After syslog forwarding was configured, Wazuh was checked for incoming OPNsense events.
+### Validation
 
-Useful Wazuh search terms:
+Wazuh ingestion was confirmed by monitoring UDP/514 traffic on the Wazuh server:
 
-- `opnsense`
-- `squid`
-- `c-icap`
-- `clamav`
-- `eicar`
-- `blocked`
-- `deny`
-- `firewall`
-
-On the Wazuh server, incoming syslog traffic was validated with the following command.
-
-```bash
-sudo tcpdump -ni any udp port 514
+```sh
+sudo tcpdump -A -s 0 -ni any udp port 514 | grep -iE 'clamav-swg|opnsense_swg_clamav|Eicar|FOUND'
 ```
 
-This confirmed that OPNsense was forwarding events to the Wazuh SIEM.
+After downloading the EICAR test file through the Secure Web Gateway, ClamAV logged the detection, the forwarder sent it to Wazuh, and the custom Wazuh rule generated a malware alert.
 
----
+Final flow:
 
-## Troubleshooting Notes
-
-Several layers were validated independently during the build.
-
-1. Confirmed client traffic was reaching Squid.
-2. Confirmed Squid had ICAP enabled.
-3. Confirmed C-ICAP was listening on port `1344`.
-4. Confirmed ClamAV was listening on `127.0.0.1:3310`.
-5. Confirmed ClamAV detected EICAR locally.
-6. Confirmed C-ICAP blocked EICAR directly.
-7. Confirmed Squid blocked EICAR through the proxy.
-8. Confirmed OPNsense logs were forwarded to Wazuh.
-
-### Useful Troubleshooting Commands
-
-```bash
-tail -f /var/log/squid/access.log
-tail -f /var/log/squid/cache.log
-
-sockstat -l | grep -Ei 'c-icap|1344'
-sockstat -l | grep -Ei 'clamd|3310|clam'
-
-grep -iE 'icap|avscan|adaptation|bypass' /usr/local/etc/squid/squid.conf
-
-clamscan /tmp/eicar.txt
-clamdscan /tmp/eicar.txt
-
-c-icap-client -i ::1 -p 1344 -s avscan -f /tmp/eicar.txt -v
+```text
+EICAR Download → Squid → C-ICAP → ClamAV → Forwarder → Wazuh Alert
 ```
-
----
 
 ## Final Result
 
-The lab successfully implemented a Secure Web Gateway with malware scanning and SIEM visibility.
+The lab successfully implemented a Secure Web Gateway with malware scanning and SIEM visibility! I can now spend time trying out the wazuh agent on endpoints, and pushing syslog of my docker server and Proxmox server to wazuh. This will allow greater visibility into my infrastructure, and endpoints to ensure a secondary security control is in place for malware detection. This proy also gives me granular control over blocking certain domains, and IP addresses.
 
 ### Final Validated Traffic Flow
 
@@ -586,7 +622,5 @@ Logs Forwarded to Wazuh
 
 ## Summary
 
-This lab demonstrates how an open-source firewall and proxy stack can be used to approximate enterprise Secure Web Gateway behavior. By combining OPNsense, Squid, C-ICAP, ClamAV, and Wazuh, the environment provided controlled web access, malware scanning, block validation, and centralized SIEM visibility.
-
-The most important validation was the successful end-to-end blocking of the EICAR test file through the client proxy path, proving that client web traffic was being inspected by the security stack before reaching the endpoint.
+This lab demonstrates how an open-source firewall and proxy stack can be used to approximate enterprise Secure Web Gateway behavior. By combining OPNsense, Squid, C-ICAP, ClamAV, and Wazuh, the environment provided controlled web access, malware scanning, block validation, and centralized SIEM visibility. By utilizing Wazuh to write custom detection rules, I can setup indicators of compromise from certain popular attacks, and start monitoring and responding to them. This lab will be a great addition, that will give me the ability to try multiple different security concepts and allow me to showcase more cybersecurity skills.
 
