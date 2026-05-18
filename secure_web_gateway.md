@@ -1,9 +1,9 @@
-# 🛡️ Secure Web Gateway Lab
+#  Secure Web Gateway Lab
 
-## 📑 Overview
+##  Overview
 This project documents the buildout of a lab **Secure Web Gateway** using OPNsense, Squid Proxy, C-ICAP, ClamAV, and Wazuh. The goal of the lab was to simulate an enterprise web security control that forces client traffic through a proxy, scans downloaded content for malware, blocks malicious files, and forwards security logs into a SIEM.
 
-## 🎯 Lab Goals
+##  Lab Goals
 - Route client web traffic through an OPNsense-based proxy.
 - Use **Squid** as the Secure Web Gateway proxy service.
 - Integrate Squid with **C-ICAP** for content inspection.
@@ -14,7 +14,7 @@ This project documents the buildout of a lab **Secure Web Gateway** using OPNsen
 
 ---
 
-## 🏗️ Infrastructure
+##  Infrastructure
 
 ### Network Layout
 
@@ -62,7 +62,7 @@ Wazuh SIEM</code>
 
 ---
 
-## ⚙️ Wazuh Deployment
+##  Wazuh Deployment
 Wazuh was deployed as a Docker-based SIEM server on a Linux VM.
 
 **1. Install Docker**
@@ -89,7 +89,7 @@ sudo docker compose up -d</code>
 
 ---
 
-## 📡 Wazuh Syslog Configuration
+##  Wazuh Syslog Configuration
 Wazuh was configured to receive syslog events from OPNsense. The manager configuration was edited:
 
 <pre/><code>sudo nano config/wazuh_cluster/wazuh_manager.conf</code>
@@ -111,7 +111,7 @@ sudo docker compose up -d</code>
 
 ---
 
-## 🧩 OPNsense Configuration
+##  OPNsense Configuration
 
 ### Plugin Configuration
 The following OPNsense plugins were installed to provide the firewall, proxy, malware scanning, and ICAP integration:
@@ -170,7 +170,7 @@ adaptation_access request_mod deny all</code>
 
 ---
 
-## 🔥 Firewall Rules Created
+##  Firewall Rules Created
 Firewall rules were created to enforce the Secure Web Gateway path.
 
 | Rule Name | Action | Source | Destination | Port | Purpose |
@@ -183,7 +183,7 @@ Firewall rules were created to enforce the Secure Web Gateway path.
 
 ---
 
-## 📡 OPNsense Remote Logging
+##  OPNsense Remote Logging
 OPNsense was configured to forward events to Wazuh for centralized visibility.
 - **Location:** `System → Settings → Logging → Targets`
 - **Enabled:** Yes
@@ -194,7 +194,7 @@ OPNsense was configured to forward events to Wazuh for centralized visibility.
 
 ---
 
-## ✅ Validation & Testing
+## Validation & Testing
 
 ### 1. Malware Scanning Validation (EICAR)
 A safe EICAR antivirus test file was created on OPNsense:
@@ -228,7 +228,7 @@ On the Wazuh server, incoming syslog traffic was validated to ensure logs were b
 
 ---
 
-## 🛠️ Troubleshooting Notes
+##  Troubleshooting Notes
 During the build, layers were independently validated:
 1. Confirmed client traffic was reaching Squid.
 2. Confirmed Squid had ICAP enabled.
@@ -250,7 +250,7 @@ c-icap-client -i ::1 -p 1344 -s avscan -f /tmp/eicar.txt -v</code>
 
 ---
 
-## 🏁 Final Result
+##  Final Result
 The lab successfully implemented a Secure Web Gateway with malware scanning and SIEM visibility. 
 
 **Validated Traffic Flow:**
