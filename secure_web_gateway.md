@@ -154,6 +154,8 @@ These plugins provided the proxy, malware scanning, and ICAP integration needed 
 
 ## Squid Proxy Configuration
 
+![alttxt](Pictures/Proxy_Settings.png)
+
 Squid was configured as the primary web proxy inside OPNsense.
 
 **OPNsense menu path:**
@@ -180,6 +182,8 @@ tail -f /var/log/squid/access.log
 ---
 
 ## ClamAV Configuration
+
+![alttxt](Pictures/ClamAV_Settings.png)
 
 ClamAV was enabled from the OPNsense web interface.
 
