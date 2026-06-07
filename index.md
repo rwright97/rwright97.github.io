@@ -4,7 +4,7 @@
   Ridge Wright — Cybersecurity Portfolio
 </div>
 
-<img src="{{ '/Pictures/Profile.png' | relative_url }}" alt="Ridge Wright" width="320">
+<img width="1024" height="1535" alt="Profile" src="https://github.com/user-attachments/assets/3a88a9c5-8079-4229-83e8-c7b9c80ee1c0" />
 
 <div style="font-size: 20px; font-weight: bold; margin-top: 15px;">
   System Administrator • Aspiring Cybersecurity Engineer
