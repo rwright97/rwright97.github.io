@@ -1,5 +1,10 @@
 # Secure Web Gateway Lab
 
+<img width="255" height="142" alt="image" src="https://github.com/user-attachments/assets/88f3963e-c821-451a-8b19-84ad94183143" />
+
+<img width="216" height="136" alt="image" src="https://github.com/user-attachments/assets/3740fa47-07e1-4078-9e78-d50c6d0d3d5a" />
+
+
 ## Overview
 
 This project documents the buildout of a Secure Web Gateway using OPNsense, Squid Proxy, C-ICAP, ClamAV, and Wazuh. The goal of the lab was to simulate an enterprise web security control that forces client web traffic through a proxy, scans downloaded content for malware, blocks malicious files, and forwards security events into a SIEM for centralized visibility.
