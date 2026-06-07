@@ -429,14 +429,15 @@ sudo tcpdump -A -s 0 -ni any udp port 514 | grep -iE 'clamav-swg|opnsense_swg_cl
 
 After downloading the EICAR test file through the Secure Web Gateway, ClamAV logged the detection, the forwarder sent it to Wazuh, and the custom Wazuh rule generated a malware alert.
 
-![alttxt](Pictures/ClamAV_Block.webm)
+<img width="1280" height="802" alt="ClamAV_Block(1)" src="https://github.com/user-attachments/assets/0402f313-2111-4455-93b7-506d295d8b30" />
+
 
 Wazuh SIEM Events:
 
 ![alttxt](Pictures/Wazuh_Malware_Event.png)
 
 SIEM Event Details:
-![alttxt](Wazuh_Event_Details.png)
+![alttxt](Pictures/Wazuh_Event_Details.png)
 
 
 
