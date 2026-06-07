@@ -48,7 +48,7 @@ Simulated SSH initial access with Hydra, exploited a sudoers misconfiguration us
 
 ---
 
-### [Secure Web Gateway + Wazuh SIEM Alerting][secure_web_gateway.md)
+### [Secure Web Gateway + Wazuh SIEM Alerting](secure_web_gateway.md)
 
 Utilize Squid proxy, along with a OPNsense firewall, to block malware before it is downloaded, and log an event inside of a Wazuh SIEM.
 
