@@ -36,7 +36,7 @@
 
 ![alt texxt](Pictures/TPOT Home Page.png)
 
-#### Here on the attack page, we cna see a few attacks have already occurred
+#### Here on the attack page, we can see a few attacks have already occurred
 
 ![alt texxt](Pictures/attackmap.png)
 
