@@ -29,7 +29,7 @@
 
 #### After those finish, I then reboot. Now SSH has been changed. Port 22 is no longer yours, but instead will be open to the world.I'll ssh back into the VM back from my device using my configured port.
 
-[alt text](Pictures/New SSH.png)
+![alt text](Pictures/New SSH.png)
 
 #### Once I knew SSH works, I then pivoted to setting up access to the Web UI. I had to add another firewall rule to allow the LAN Interface access to the DMZ Interface.
 #### I then tested the GUI by going to this: {VM IP Address}:64297
