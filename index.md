@@ -16,6 +16,8 @@
 
 </div>
 
+View My Professional Portfolio [Here](Documents/Ridge_Wright_2026.pdf) 
+
 ## Brief Intro
 
 Welcome to my cybersecurity portfolio.
