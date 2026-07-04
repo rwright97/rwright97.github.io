@@ -16,8 +16,6 @@
 
 </div>
 
-View My Professional Portfolio [Here](Documents/Ridge_Wright_2026.pdf) 
-
 ## Brief Intro
 
 Welcome to my cybersecurity portfolio.
@@ -27,6 +25,8 @@ I am a System Administrator building hands-on experience in cybersecurity engine
 This portfolio documents the labs, research, and technical projects I work on in my free time as I continue developing the skills needed to move into a dedicated Cybersecurity Engineer role.
 
 My goal is to understand both sides of cybersecurity: how systems are attacked, and how they can be hardened, monitored, and defended.
+
+View My Seperate Professional Portfolio [Here](Documents/Ridge_Wright_2026.pdf) 
 
 ---
 
