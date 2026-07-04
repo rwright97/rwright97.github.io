@@ -26,7 +26,7 @@ This portfolio documents the labs, research, and technical projects I work on in
 
 My goal is to understand both sides of cybersecurity: how systems are attacked, and how they can be hardened, monitored, and defended.
 
-View My Seperate Professional Portfolio [Here](Documents/Ridge_Wright_2026.pdf) 
+View My Seperate Professional Portfolio [Here](Documents/Ridge_Wright_2026_portfolio.pdf) 
 
 ---
 
