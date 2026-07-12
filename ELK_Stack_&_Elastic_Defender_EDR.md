@@ -27,7 +27,7 @@ Download the .env file and docker-compose.yml file from [here](https://github.co
 
 run the build command while inside the directory that houses both files:
 
-sudo docker-compose up -d
+``` sudo docker-compose up -d ```
 
 <img width="3812" height="1028" alt="image" src="https://github.com/user-attachments/assets/5939d4a3-05d5-4bce-95a3-a907c02d5437" />
 
