@@ -5,6 +5,10 @@ This write-up documents my deployment of a multi node docker container architect
 
 ## Lab Goals
 - Deploy a comprehensive SIEM solution for endpoints on my homelab network.
-- Be able to methodically plan and execute an attack scenario. (HTML Smuggling using 
+- Be able to methodically plan and execute an attack scenario. (HTML Smuggling)
+- Utilize endpoint and attack data inside of Elasticsearch to create custom query rules to report or block actions from occuring.
+
+## Technical Overview
+I am utiliizing Docker Compose today for running my entire ELK stack, and fleet-server. Here is 
 
 
