@@ -34,7 +34,8 @@ via PowerShell.
 ## Installing and enrolling the Elastic Agent on the Windows 11 endpoint
 .\elastic-agent.exe install --url=https://<Fleet_Server_IP>:8220 --enrollment-token=<Enrollment_Token> --insecure
 
-(Screenshot Placeholder: PowerShell Elastic Agent successful installation)
+<img width="1986" height="1036" alt="Elastic Defender Windows Install" src="https://github.com/user-attachments/assets/8de58469-1dc6-4f63-8aab-1a00fd159de0" />
+
 
 ### Phase 1: Payload Crafting & Phishing Delivery
 
@@ -69,6 +70,8 @@ Plaintext
 
 When the user opened the phishing attachment, the embedded script utilized a JavaScript Blob array to reassemble the Meterpreter binary directly inside browser memory before forcing a localized disk write.
 
+<img width="2956" height="1692" alt="Phishing_Email" src="https://github.com/user-attachments/assets/7d7fa7c7-a45d-495d-be09-500a080dd721" />
+
 
 ### Phase 3: EDR Detection & Incident Response
 
@@ -76,11 +79,16 @@ The moment the browser completed the memory compilation and dropped the file to 
 
 Elastic Defend’s behavioral and static analysis engines identified the Meterpreter payload immediately upon the disk write event, automatically quarantining the executable before it could execute or establish the reverse shell connection back to the Kali listener.
 
+<img width="2954" height="1874" alt="EDR_Blocks_Payload" src="https://github.com/user-attachments/assets/8a3aaa1f-8ace-42b9-b580-47dd8f9b5cb7" />
+
 
 ## Case Management & Triage
 
 Within the Kibana Security application, multiple telemetry triggers fired simultaneously. To organize the incident response effort, four distinct EDR malware alerts were aggregated and escalated into a single unified Case. This demonstrates the ability to track an incident from initial triage through to remediation tracking.
-(Screenshot Placeholder: Kibana Security Cases tab showing the grouped alerts)
+
+<img width="3840" height="2098" alt="ELK_Stack_Case_Creation" src="https://github.com/user-attachments/assets/694e076a-65c2-4c4d-9260-0f2aac97c73e" />
+
+
 Execution Pipeline Analysis (Attack Map)
 
 To perform root cause analysis, I utilized Elastic's Analyzer / Process Tree (Attack Map) view. This visual timeline perfectly mapped the execution pipeline, explicitly showing:
@@ -91,7 +99,8 @@ To perform root cause analysis, I utilized Elastic's Analyzer / Process Tree (At
 
     The Elastic Defend engine intercepting the execution chain and terminating the threat.
 
-(Screenshot Placeholder: Elastic Security Analyzer visual process tree/attack map)
+<img width="3840" height="2242" alt="Attack_Map" src="https://github.com/user-attachments/assets/a3371c71-59bc-434d-b4c1-3db078cd9dc4" />
+
 
 ## Key Takeaways
 
