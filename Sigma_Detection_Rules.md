@@ -54,8 +54,8 @@ I noticed an open ssh port on the victim host, so I decided to compile a usernam
 
 ![alttext](Pictures/sigma_hydra.png)
 
-We have identified credentials that we can use to login to the victim with via ssh.
-I will now perform the commands below and look at the accounts sudo permissions,
+We have identified credentials that we can use to log in to the victim via ssh.
+I will now perform the commands below and look at the account's sudo permissions,
 then execute the second command below to gain access to a privileged shell:
 
 <pre><code>sudo -l</code></pre>
