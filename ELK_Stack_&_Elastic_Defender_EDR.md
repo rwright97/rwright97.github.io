@@ -72,11 +72,12 @@ When the user opened the phishing attachment, the embedded script utilized a Jav
 
 ### Phase 3: EDR Detection & Incident Response
 
-The moment the browser completed the memory compilation and dropped the file to disk, the endpoint controls intervened, moving the workflow from detection to active incident response.
-Automated Prevention
+The moment the browser completed the memory compilation and dropped the file to disk, the endpoint controls intervened, moving the workflow from detection to active incident response using Automated Prevention.
 
 Elastic Defend’s behavioral and static analysis engines identified the Meterpreter payload immediately upon the disk write event, automatically quarantining the executable before it could execute or establish the reverse shell connection back to the Kali listener.
-Case Management & Triage
+
+
+## Case Management & Triage
 
 Within the Kibana Security application, multiple telemetry triggers fired simultaneously. To organize the incident response effort, four distinct EDR malware alerts were aggregated and escalated into a single unified Case. This demonstrates the ability to track an incident from initial triage through to remediation tracking.
 (Screenshot Placeholder: Kibana Security Cases tab showing the grouped alerts)
