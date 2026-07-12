@@ -177,7 +177,7 @@ Services -> Squid Web Proxy -> Administration
 | Listening Interface | `LAN` |
 | Allowed Clients | Internal client subnet |
 
-The Windows client was configured to auto utilize any proxys for traffic.
+The Windows client was configured to automatically utilize any proxies for traffic.
 I verified this by blocking the google domain and trying to browse to it.
 
 ```bash
@@ -443,7 +443,7 @@ SIEM Event Details:
 
 ## Final Result
 
-The lab successfully implemented a Secure Web Gateway with malware scanning and SIEM visibility! I can now spend time trying out the wazuh agent on endpoints, and pushing syslog of my docker server and Proxmox server to wazuh. This will allow greater visibility into my infrastructure, and endpoints to ensure a secondary security control is in place for malware detection. This proy also gives me granular control over blocking certain domains, and IP addresses.
+The lab successfully implemented a Secure Web Gateway with malware scanning and SIEM visibility! I can now spend time trying out the wazuh agent on endpoints, and pushing syslog of my docker server and Proxmox server to wazuh. This will allow greater visibility into my infrastructure, and endpoints to ensure a secondary security control is in place for malware detection. This proxy also gives me granular control over blocking certain domains, and IP addresses.
 
 ### Final Validated Traffic Flow
 
