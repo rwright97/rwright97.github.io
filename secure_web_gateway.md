@@ -482,5 +482,5 @@ Logs Forwarded to Wazuh
 
 ## Summary
 
-This lab demonstrates how an open-source firewall and proxy stack can be used to approximate enterprise Secure Web Gateway behavior. By combining OPNsense, Squid, C-ICAP, ClamAV, and Wazuh, the environment provided controlled web access, malware scanning, block validation, and centralized SIEM visibility. By utilizing Wazuh to write custom detection rules, I can setup indicators of compromise from certain popular attacks, and start monitoring and responding to them. This lab will be a great addition, that will give me the ability to try multiple different security concepts and allow me to showcase more cybersecurity skills.
+This lab demonstrates how an open-source firewall and proxy stack can be used to approximate enterprise Secure Web Gateway behavior. By combining OPNsense, Squid, C-ICAP, ClamAV, and Wazuh, the environment provided controlled web access, malware scanning, block validation, and centralized SIEM visibility. By utilizing Wazuh to write custom detection rules, I can setup indicators of compromise from certain popular attacks, and start monitoring and responding to them. This lab will be a great addition that will give me the ability to try multiple different security concepts and allow me to showcase more cybersecurity skills.
 
