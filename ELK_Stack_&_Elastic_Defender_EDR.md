@@ -53,7 +53,8 @@ Bash
 
 base64 -w 0 payload.exe > base64_exe.txt
 
-(Screenshot Placeholder: HTML code snippet showing the Base64 variable and Blob assembly)
+<img width="2874" height="1794" alt="HTML_Smuggling_Malware" src="https://github.com/user-attachments/assets/4c83c29f-7210-4f76-8d61-80531c2ae52a" />
+
 
 ### 3. Delivery Mechanism:
 The weaponized HTML file was emailed directly to the target endpoint to simulate a realistic phishing campaign.
@@ -93,22 +94,22 @@ Execution Pipeline Analysis (Attack Map)
 
 To perform root cause analysis, I utilized Elastic's Analyzer / Process Tree (Attack Map) view. This visual timeline perfectly mapped the execution pipeline, explicitly showing:
 
-    The parent browser process (msedge.exe).
+- The parent browser process (msedge.exe).
 
-    The file modification event writing the anomalous executable to the file system.
+- The file modification event writing the anomalous executable to the file system.
 
-    The Elastic Defend engine intercepting the execution chain and terminating the threat.
+- The Elastic Defend engine intercepting the execution chain and terminating the threat.
 
 <img width="3840" height="2242" alt="Attack_Map" src="https://github.com/user-attachments/assets/a3371c71-59bc-434d-b4c1-3db078cd9dc4" />
 
 
 ## Key Takeaways
 
-    Network Blindness: Network signatures and standard email gateways are highly ineffective against application-layer obfuscation like HTML smuggling. Initial access validation must happen at the endpoint layer.
+- Network Blindness: Network signatures and standard email gateways are highly ineffective against application-layer obfuscation like HTML smuggling. Initial access validation must happen at the endpoint layer.
 
-    The Value of EDR: Automated prevention controls are critical. Coupling a SIEM with an active EDR ensures that stageless payloads bypassing the perimeter are neutralized at the disk level, significantly reducing the Mean Time to Respond (MTTR).
+- The Value of EDR: Automated prevention controls are critical. Coupling a SIEM with an active EDR ensures that stageless payloads bypassing the perimeter are neutralized at the disk level, significantly reducing the Mean Time to Respond (MTTR).
 
-    Streamlined Incident Response: Leveraging SIEM Case Management and visual Process Analyzers allows detection engineers and analysts to rapidly track a threat's origin (the browser) rather than just reacting to the isolated file drop.
+- Streamlined Incident Response: Leveraging SIEM Case Management and visual Process Analyzers allows detection engineers and analysts to rapidly track a threat's origin (the browser) rather than just reacting to the isolated file drop.
 
 
 
