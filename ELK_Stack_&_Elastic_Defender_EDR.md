@@ -67,7 +67,6 @@ The weaponized HTML file was emailed directly to the target endpoint to simulate
 #### Phase 2: Execution & Network Evasion
 
 The attack relied on the endpoint's browser to build the malware locally, rendering network firewalls and email gateways blind since the file was never transferred as a compiled executable.
-Plaintext
 
 [ Email Inbox ] ---> ( Encoded HTML Attachment ) ---> [ Perimeter/Email Gateway ] (Allowed: Read as benign text)
                                                               |
