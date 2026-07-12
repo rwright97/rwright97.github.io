@@ -23,9 +23,14 @@ The core ELK infrastructure was spun up via a standardized containerized deploym
 Bash
 
 ## Initializing the ELK SIEM environment
-docker-compose up -d
+Download the .env file and docker-compose.yml file from [here](https://github.com/elastic/elasticsearch/tree/main/docs/reference/setup/install/docker) and edit all settings needed for my environment.
 
-(Screenshot Placeholder: Docker Compose terminal output / Container status)
+run the build command while inside the directory that houses both files:
+
+sudo docker-compose up -d
+
+(<img width="3812" height="1028" alt="image" src="https://github.com/user-attachments/assets/5939d4a3-05d5-4bce-95a3-a907c02d5437" />
+
 
 EDR Deployment:
 The Windows 11 endpoint was instrumented by deploying the Elastic Agent and enrolling it into the Fleet server with the Elastic Defend integration applied,
