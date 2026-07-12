@@ -6,7 +6,7 @@ This project documents the implementation of a detection engineering home lab ce
 ## Lab Goals
 - Deploy a comprehensive SIEM solution for endpoints on my homelab network.
 - Be able to methodically plan and execute an attack scenario. (HTML Smuggling)
-- Utilize endpoint and attack data inside of Elasticsearch to create custom query rules to report or block actions from occuring.
+- Utilize endpoint and attack data inside of Elasticsearch to create custom query rules to report or block actions from occurring.
 
 ## Lab Architecture & Initialization
 
