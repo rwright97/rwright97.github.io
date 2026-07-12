@@ -27,7 +27,7 @@ Download the .env file and docker-compose.yml file from [here](https://github.co
 
 run the build command while inside the directory that houses both files:
 
-<pre><code>sudo docker-compose up -d</code></pre>
+sudo docker-compose up -d
 
 <img width="4000" height="1028" alt="image" src="https://github.com/user-attachments/assets/5939d4a3-05d5-4bce-95a3-a907c02d5437" />
 
@@ -37,7 +37,7 @@ The Windows 11 endpoint was instrumented by deploying the Elastic Agent and enro
 via PowerShell.
 
 ## Installing and enrolling the Elastic Agent on the Windows 11 endpoint
-<pre><code>.\elastic-agent.exe install --url=https://<Fleet_Server_IP>:8220 --enrollment-token=<Enrollment_Token> --insecure</code></pre>
+.\elastic-agent.exe install --url=https://<Fleet_Server_IP>:8220 --enrollment-token=<Enrollment_Token> --insecure
 
 <img width="4000" height="1036" alt="Elastic Defender Windows Install" src="https://github.com/user-attachments/assets/8de58469-1dc6-4f63-8aab-1a00fd159de0" />
 
@@ -56,7 +56,7 @@ Bash
 The binary was converted into a Base64 string and embedded inside a client-side JavaScript block within T1027_006_smuggling.html.
 Bash
 
-<pre><code>base64 -w 0 payload.exe > base64_exe.txt</code></pre>
+base64 -w 0 payload.exe > base64_exe.txt
 
 <img width="4000" height="1794" alt="HTML_Smuggling_Malware" src="https://github.com/user-attachments/assets/4c83c29f-7210-4f76-8d61-80531c2ae52a" />
 
