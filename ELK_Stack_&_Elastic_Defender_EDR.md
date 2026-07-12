@@ -29,7 +29,7 @@ run the build command while inside the directory that houses both files:
 
 sudo docker-compose up -d
 
-<img width="4000" height="1028" alt="image" src="https://github.com/user-attachments/assets/5939d4a3-05d5-4bce-95a3-a907c02d5437" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/5939d4a3-05d5-4bce-95a3-a907c02d5437" />
 
 
 EDR Deployment:
@@ -39,7 +39,7 @@ via PowerShell.
 ## Installing and enrolling the Elastic Agent on the Windows 11 endpoint
 .\elastic-agent.exe install --url=https://<Fleet_Server_IP>:8220 --enrollment-token=<Enrollment_Token> --insecure
 
-<img width="4000" height="1036" alt="Elastic Defender Windows Install" src="https://github.com/user-attachments/assets/8de58469-1dc6-4f63-8aab-1a00fd159de0" />
+<img width="800" alt="Elastic Defender Windows Install" src="https://github.com/user-attachments/assets/8de58469-1dc6-4f63-8aab-1a00fd159de0" />
 
 
 ### Phase 1: Payload Crafting & Phishing Delivery
@@ -58,7 +58,7 @@ Bash
 
 base64 -w 0 payload.exe > base64_exe.txt
 
-<img width="4000" height="1794" alt="HTML_Smuggling_Malware" src="https://github.com/user-attachments/assets/4c83c29f-7210-4f76-8d61-80531c2ae52a" />
+<img width="800" alt="HTML_Smuggling_Malware" src="https://github.com/user-attachments/assets/4c83c29f-7210-4f76-8d61-80531c2ae52a" />
 
 
 ### 3. Delivery Mechanism:
@@ -76,7 +76,7 @@ Plaintext
 
 When the user opened the phishing attachment, the embedded script utilized a JavaScript Blob array to reassemble the Meterpreter binary directly inside browser memory before forcing a localized disk write.
 
-<img width="4000" height="1692" alt="Phishing_Email" src="https://github.com/user-attachments/assets/7d7fa7c7-a45d-495d-be09-500a080dd721" />
+<img width="800" alt="Phishing_Email" src="https://github.com/user-attachments/assets/7d7fa7c7-a45d-495d-be09-500a080dd721" />
 
 
 ### Phase 3: EDR Detection & Incident Response
@@ -85,14 +85,14 @@ The moment the browser completed the memory compilation and dropped the file to 
 
 Elastic Defend’s behavioral and static analysis engines identified the Meterpreter payload immediately upon the disk write event, automatically quarantining the executable before it could execute or establish the reverse shell connection back to the Kali listener.
 
-<img width="4000" height="1874" alt="EDR_Blocks_Payload" src="https://github.com/user-attachments/assets/8a3aaa1f-8ace-42b9-b580-47dd8f9b5cb7" />
+<img width="800" alt="EDR_Blocks_Payload" src="https://github.com/user-attachments/assets/8a3aaa1f-8ace-42b9-b580-47dd8f9b5cb7" />
 
 
 ## Case Management & Triage
 
 Within the Kibana Security application, multiple telemetry triggers fired simultaneously. To organize the incident response effort, four distinct EDR malware alerts were aggregated and escalated into a single unified Case. This demonstrates the ability to track an incident from initial triage through to remediation tracking.
 
-<img width="3840" height="2098" alt="ELK_Stack_Case_Creation" src="https://github.com/user-attachments/assets/694e076a-65c2-4c4d-9260-0f2aac97c73e" />
+<img width="800" alt="ELK_Stack_Case_Creation" src="https://github.com/user-attachments/assets/694e076a-65c2-4c4d-9260-0f2aac97c73e" />
 
 
 Execution Pipeline Analysis (Attack Map)
@@ -105,11 +105,11 @@ To perform root cause analysis, I utilized Elastic's Analyzer / Process Tree (At
 
 - The Elastic Defend engine intercepting the execution chain and terminating the threat.
 
-<img width="3840" height="2242" alt="Attack_Map" src="https://github.com/user-attachments/assets/a3371c71-59bc-434d-b4c1-3db078cd9dc4" />
+<img width="800" alt="Attack_Map" src="https://github.com/user-attachments/assets/a3371c71-59bc-434d-b4c1-3db078cd9dc4" />
 
-<img width="3832" height="2108" alt="image" src="https://github.com/user-attachments/assets/00de8b17-c72c-4aef-9479-48794518368c" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/00de8b17-c72c-4aef-9479-48794518368c" />
 
-<img width="3832" height="2108" alt="image" src="https://github.com/user-attachments/assets/ad93d4d6-3123-4a4b-9049-1d2e6d980d2e" />
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/ad93d4d6-3123-4a4b-9049-1d2e6d980d2e" />
 
 
 
