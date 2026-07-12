@@ -28,8 +28,8 @@ docker-compose up -d
 (Screenshot Placeholder: Docker Compose terminal output / Container status)
 
 EDR Deployment:
-The Windows 11 endpoint was instrumented by deploying the Elastic Agent and enrolling it into the Fleet server with the Elastic Defend integration applied.
-PowerShell
+The Windows 11 endpoint was instrumented by deploying the Elastic Agent and enrolling it into the Fleet server with the Elastic Defend integration applied,
+via PowerShell.
 
 ## Installing and enrolling the Elastic Agent on the Windows 11 endpoint
 .\elastic-agent.exe install --url=https://<Fleet_Server_IP>:8220 --enrollment-token=<Enrollment_Token> --insecure
