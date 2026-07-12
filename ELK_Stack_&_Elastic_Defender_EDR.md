@@ -102,6 +102,11 @@ To perform root cause analysis, I utilized Elastic's Analyzer / Process Tree (At
 
 <img width="3840" height="2242" alt="Attack_Map" src="https://github.com/user-attachments/assets/a3371c71-59bc-434d-b4c1-3db078cd9dc4" />
 
+<img width="3832" height="2108" alt="image" src="https://github.com/user-attachments/assets/00de8b17-c72c-4aef-9479-48794518368c" />
+
+<img width="3832" height="2108" alt="image" src="https://github.com/user-attachments/assets/ad93d4d6-3123-4a4b-9049-1d2e6d980d2e" />
+
+
 
 ## Key Takeaways
 
