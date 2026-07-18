@@ -55,12 +55,18 @@ Simulated SSH initial access with Hydra, exploited a sudoers misconfiguration us
 Utilize Squid proxy, along with a OPNsense firewall, to block malware before it is downloaded, and log an event inside of a Wazuh SIEM.
 
 ---
+
 ### [HTML Smuggling Emulation & EDR Detection Via ELK Stack](ELK_Stack_&_Elastic_Defender_EDR.md)
 
 This lab is a practical detection engineering and incident response simulation. It demonstrates how adversaries use HTML smuggling via a phishing lure to bypass network perimeters and deliver a stageless Meterpreter payload. Defensively, it showcases how an active EDR (Elastic Defend) intercepts the payload assembly on a Windows 11 endpoint, followed by incident triage, alert aggregation into case management, and root-cause analysis using the ELK Stack SIEM.
 
 ---
 
+### [Suricata IPS Log Pipeline Into ELK Stack](Ingest_Suricata_Logs_Into_ELK.md)
+
+Stand up Suricata IPS/IDS on an OPNsense firewall, and ingest Suricata alerts and log data into an ELK stack SIEM. This allows me to correlate IPS alerts with any Elastic EDR telemetry, to enrichen an attack story and provide me more data during investigations.
+
+---
 
 ## Contact
 
