@@ -58,6 +58,10 @@ To guarantee the pipeline was operating correctly, network traffic was captured 
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/c71b9155-1eb2-4be0-8dd4-ec29248d102d" />
 
+Inside of Elasticsearch, I was able to index the data and create a data view, I can now query this data view for any relevant IDS/IPS alerts that may pertain to other events that happen on my endpoint EDR telemetry:
+
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/2491a1a8-fc07-4563-b1c4-4dfd256c8e65" />
+
 
 ## Conclusion
 
