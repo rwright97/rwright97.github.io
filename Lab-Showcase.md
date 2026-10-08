@@ -4,8 +4,6 @@
   Ridge Wright — Cybersecurity Portfolio
 </div>
 
-<img width="325" alt="Profile" src="https://github.com/user-attachments/assets/3a88a9c5-8079-4229-83e8-c7b9c80ee1c0" />
-
 <div style="font-size: 20px; font-weight: bold; margin-top: 15px;">
   System Administrator 
 </div>
@@ -20,9 +18,9 @@
 
 Welcome to my cybersecurity portfolio.
 
-I am a System Administrator building hands-on experience in cybersecurity engineering, cloud security, endpoint management, detection, and offensive security fundamentals. My background includes infrastructure administration, automation, networking, virtualization, Microsoft cloud administration, and security-focused troubleshooting.
+I am a System Administrator building hands-on experience in cybersecurity engineering, cloud security, endpoint management, detection, and offensive security fundamentals. My background includes infrastructure administration, automation, networking, virtualization, and Microsoft cloud administration.
 
-This portfolio documents the labs, research, and technical projects I work on in my free time 
+This portfolio documents the labs, research, and technical projects I work on in my free time.
 
 My goal is to understand both sides of cybersecurity: how systems are attacked, and how they can be hardened, monitored, and defended.
 
