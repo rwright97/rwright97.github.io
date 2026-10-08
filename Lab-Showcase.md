@@ -64,9 +64,3 @@ This lab is a practical detection engineering and incident response simulation. 
 Stand up Suricata IPS/IDS on an OPNsense firewall, and ingest Suricata alerts and log data into an ELK stack SIEM. This allows me to correlate IPS alerts with any Elastic EDR telemetry, to enrichen an attack story and provide me more data during investigations.
 
 ---
-
-## Contact
-
-- GitHub: [rwright97](https://github.com/rwright97)
-- Phone: 470-442-0464
-- Email: [ridge.wright97@gmail.com](mailto:ridge.wright97@gmail.com)
